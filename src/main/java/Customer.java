@@ -17,7 +17,7 @@ public class Customer
 
 
 /**
-   compares clients based on thier net worth
+   compares clients based on their net worth
 */
    public static class WorthComparator implements Comparator<Customer>
    {
@@ -29,7 +29,7 @@ public class Customer
    */
       public int compare(Customer c1, Customer c2)
       {
-            return 0;
+            return c1.netWorth - c2.netWorth;
       }
    
    }
@@ -48,7 +48,7 @@ public class Customer
    */
       public int compare(Customer c1, Customer c2)
       {
-	  return 0;
+    	  return c1.yearsWithCompany - c2.yearsWithCompany;
       }
    
    }
@@ -69,7 +69,14 @@ public class Customer
    */
       public int compare(Customer c1, Customer c2)
       {
-	  return 0;
+    	  if(c1.netWorth == c2.netWorth)
+    	  {
+    		  return c1.politeness - c2.politeness;
+    	  }
+    	  else
+    	  {
+    		  return c1.netWorth - c2.netWorth;
+    	  }
       }
    
    }
